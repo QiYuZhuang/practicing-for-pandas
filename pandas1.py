@@ -16,7 +16,7 @@ print(series1)
 print(series2)
 print(series3)
 
-# question3: how to convert the index of a series into a column of a dataframe?
+# question3: how to convert the index of a series into a column of a data frame?
 mylist = list("abcdefghijklmnopqrstuvwxyz")
 myarr = np.arange(26)
 mydict = dict(zip(mylist, myarr))
@@ -28,7 +28,7 @@ ser_df.reset_index()
 ser_df = ser.to_frame().reset_index()
 print(ser_df)
 
-# question4: how to combine many series to form a dataframe?
+# question4: how to combine many series to form a data frame?
 
 ser1 = pd.Series(list('abcdefghijklmnopqrstuvwxyz'))
 ser2 = pd.Series(np.arange(26))

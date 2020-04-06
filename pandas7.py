@@ -16,7 +16,7 @@ print('Lag having highest correlation:', np.argmax(np.abs(auto_correlations[1:])
 
 # question33: how to import only every nth row from csv file to create a data frame?
 column_names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']
-dataset = pd.read_csv('housing.csv', delimiter=r'\s+', names=column_names, chunksize=50)
+dataset = pd.read_csv(r'inputs\housing.csv', delimiter=r'\s+', names=column_names, chunksize=50)
 data_frame = pd.concat([chunk.iloc[0] for chunk in dataset], axis=1)
 data_frame_2 = data_frame.transpose()
 data_frame_2.index = list(range(11))
@@ -24,9 +24,9 @@ print(data_frame_2)
 
 # question34: how to change column values when importing csv to a data frame?
 column_names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']
-dataset = pd.read_csv('housing.csv', delimiter=r'\s+',
+dataset = pd.read_csv(r'inputs\housing.csv', delimiter=r'\s+',
                       names=column_names, converters={"MEDV": lambda x: "HIGH" if float(x) >= 25 else "LOW"})
-print(dataset)
+print(dataset.head())
 
 # question35: how to create a data frame with rows as strides from a given series?
 L = pd.Series(range(15))

@@ -7,7 +7,7 @@ ser = pd.Series(np.random.random(20))
 print(pd.qcut(ser, q=10))
 print(pd.qcut(ser, q=10, labels=['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th']).head())
 
-# question12: how to convert a numpy array to a dataframe of given shape?
+# question12: how to convert a numpy array to a data frame of given shape?
 ser = pd.Series(np.random.randint(1, 10, 35))
 # via numpy
 print(pd.DataFrame(np.array(ser).reshape(7, 5)))
@@ -40,6 +40,6 @@ ser1.append(ser2)
 ser_output1 = pd.concat([ser1, ser2], axis=0)
 print(ser_output1)
 
-# horizontally, by the way review the method of set title of dataframe
+# horizontally, by the way review the method of set title of data frame
 ser_output2 = pd.concat({"col1": ser1, "col2": ser2}, axis=1)
 print(ser_output2)
